@@ -19,7 +19,11 @@ type
     btn_Carpa: TButton;
     btn_Pacu: TButton;
     btn_Traira: TButton;
+    Label2: TLabel;
+    Layout2: TLayout;
+    SpeedButton1: TSpeedButton;
     procedure btn_voltarClick(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,6 +43,11 @@ procedure TfrmWiki.btn_voltarClick(Sender: TObject);
 begin
   frmServicos.Show;
   Close;
+end;
+
+procedure TfrmWiki.SpeedButton1Click(Sender: TObject);
+begin
+  TabControl1.TabIndex := 0;
 end;
 
 end.
