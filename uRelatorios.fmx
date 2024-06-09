@@ -8,53 +8,108 @@ object Form2: TForm2
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   DesignerMasterStyle = 0
-  object TabControl1: TTabControl
-    Align = Client
-    Size.Width = 360.000000000000000000
-    Size.Height = 580.000000000000000000
+  object Label2: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 96.000000000000000000
+    Position.Y = 78.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 0
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000100000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'Qtde de Criadouros:'
+    TabOrder = 6
+  end
+  object Label3: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 96.000000000000000000
+    Position.Y = 143.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000100000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'Esp'#233'cies Criadas:'
+    TabOrder = 5
+  end
+  object Label4: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 96.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000100000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'Qtde de Peixes:'
+    TabOrder = 4
+  end
+  object Label5: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 96.000000000000000000
+    Position.Y = 289.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000100000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'Criadouro mais Antigo:'
+    TabOrder = 3
+  end
+  object Label6: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 96.000000000000000000
+    Position.Y = 362.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000100000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'Criadouro mais recente:'
+    TabOrder = 2
+  end
+  object Label7: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 96.000000000000000000
+    Position.Y = 427.000000000000000000
+    Size.Width = 177.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 16.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000100000004000000}
+    TextSettings.HorzAlign = Center
+    Text = 'N'#250'mero de Colheitas:'
+    TabOrder = 1
+  end
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 360.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
     TabOrder = 0
-    TabPosition = PlatformDefault
-    Sizes = (
-      360s
-      554s)
-    object TabItem1: TTabItem
-      CustomIcon = <
-        item
-        end>
-      IsSelected = True
-      Size.Width = 69.000000000000000000
-      Size.Height = 26.000000000000000000
+    object SpeedButton1: TSpeedButton
+      Align = Left
+      Size.Width = 65.000000000000000000
+      Size.Height = 50.000000000000000000
       Size.PlatformDefault = False
-      StyleLookup = ''
+      StyleLookup = 'arrowlefttoolbutton'
+      OnClick = SpeedButton1Click
+    end
+    object Label1: TLabel
+      StyledSettings = [Family, FontColor]
+      Position.X = 142.000000000000000000
+      Size.Width = 83.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000100000004000000}
+      Text = 'Relat'#243'rios'
       TabOrder = 0
-      Text = 'TabItem1'
-      object Layout1: TLayout
-        Align = Top
-        Size.Width = 360.000000000000000000
-        Size.Height = 50.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 0
-        object SpeedButton1: TSpeedButton
-          Align = Left
-          Size.Width = 65.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'arrowlefttoolbutton'
-        end
-        object Label1: TLabel
-          StyledSettings = [Family, FontColor]
-          Position.X = 142.000000000000000000
-          Size.Width = 83.000000000000000000
-          Size.Height = 50.000000000000000000
-          Size.PlatformDefault = False
-          TextSettings.Font.Size = 18.000000000000000000
-          TextSettings.Font.StyleExt = {00060000000100000004000000}
-          Text = 'Relat'#243'rios'
-          TabOrder = 0
-        end
-      end
     end
   end
 end

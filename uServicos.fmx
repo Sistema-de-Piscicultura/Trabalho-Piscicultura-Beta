@@ -41,7 +41,7 @@ object frmServicos: TfrmServicos
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    Text = 'Relat'#243'rios'
+    Text = 'Relat'#243'rio'
     TextSettings.Font.Size = 18.000000000000000000
     TextSettings.Font.StyleExt = {00060000000000000004000000}
   end
@@ -73,7 +73,7 @@ object frmServicos: TfrmServicos
   object btn_sair: TButton
     StyledSettings = [Family, FontColor]
     Position.X = 120.000000000000000000
-    Position.Y = 482.000000000000000000
+    Position.Y = 442.000000000000000000
     Size.Width = 121.000000000000000000
     Size.Height = 57.000000000000000000
     Size.PlatformDefault = False

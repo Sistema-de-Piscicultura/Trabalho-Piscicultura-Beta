@@ -9,11 +9,16 @@ uses
 
 type
   TForm2 = class(TForm)
-    TabControl1: TTabControl;
     Layout1: TLayout;
-    TabItem1: TTabItem;
     SpeedButton1: TSpeedButton;
     Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -26,5 +31,13 @@ var
 implementation
 
 {$R *.fmx}
+
+uses uServicos;
+
+procedure TForm2.SpeedButton1Click(Sender: TObject);
+begin
+  frmServicos.Show;
+  Close;
+end;
 
 end.

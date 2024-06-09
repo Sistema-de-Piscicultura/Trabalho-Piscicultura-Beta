@@ -13,23 +13,29 @@ object Form1: TForm1
     Size.Width = 360.000000000000000000
     Size.Height = 580.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 0
     TabPosition = PlatformDefault
     Sizes = (
+      360s
+      554s
+      360s
+      554s
       360s
       554s)
     object TabItem1: TTabItem
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 69.000000000000000000
       Size.Height = 26.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
       Text = 'TabItem1'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
       object Layout1: TLayout
         Align = Top
         Size.Width = 360.000000000000000000
@@ -61,6 +67,272 @@ object Form1: TForm1
         Size.Height = 504.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
+        object btn_novoCriadouro: TButton
+          StyledSettings = [Family, FontColor]
+          Position.X = 104.000000000000000000
+          Position.Y = 88.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          Text = 'Novo Criadouro'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.WordWrap = True
+        end
+        object btn_gerenciarCri: TButton
+          StyledSettings = [Family, FontColor]
+          Position.X = 104.000000000000000000
+          Position.Y = 162.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Gerenciar Criadouros'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.WordWrap = True
+        end
+        object btn_alimentar: TButton
+          StyledSettings = [Family, FontColor]
+          Position.X = 104.000000000000000000
+          Position.Y = 308.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Alimentar Peixes'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.WordWrap = True
+        end
+        object btn_addPeixes: TButton
+          StyledSettings = [Family, FontColor]
+          Position.X = 104.000000000000000000
+          Position.Y = 235.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Adicionar Peixes'
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.WordWrap = True
+        end
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 69.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem2'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Layout3: TLayout
+        Align = Top
+        Size.Width = 360.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label2: TLabel
+          StyledSettings = [Family, FontColor]
+          Position.X = 94.000000000000000000
+          Size.Width = 243.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000100000004000000}
+          Text = 'Cadastro de Criadouro'
+          TabOrder = 0
+        end
+        object SpeedButton2: TSpeedButton
+          Align = Left
+          Size.Width = 54.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowlefttoolbutton'
+        end
+      end
+      object Label3: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Position.Y = 50.000000000000000000
+        Size.Width = 360.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000100000004000000}
+        TextSettings.HorzAlign = Center
+        Text = 'Informe os dados do Criadouro:'
+        TabOrder = 5
+      end
+      object edt_nomeCri: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 13
+        Position.X = 32.000000000000000000
+        Position.Y = 127.000000000000000000
+        Size.Width = 289.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label4: TLabel
+        StyledSettings = [Family, Size, FontColor]
+        Position.X = 32.000000000000000000
+        Position.Y = 102.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Nome do Criadouro:'
+        TabOrder = 14
+      end
+      object edt_idCriadouro: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 11
+        Position.X = 32.000000000000000000
+        Position.Y = 186.000000000000000000
+        Size.Width = 289.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label5: TLabel
+        StyledSettings = [Family, Size, FontColor]
+        Position.X = 32.000000000000000000
+        Position.Y = 161.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'ID do Criadouro:'
+        TabOrder = 12
+      end
+      object edt_capacidadeCri: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 9
+        Position.X = 32.000000000000000000
+        Position.Y = 245.000000000000000000
+        Size.Width = 289.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label6: TLabel
+        StyledSettings = [Family, Size, FontColor]
+        Position.X = 32.000000000000000000
+        Position.Y = 220.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Capacidade'
+        TabOrder = 10
+      end
+      object edt_especieCri: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 6
+        Position.X = 32.000000000000000000
+        Position.Y = 304.000000000000000000
+        Size.Width = 289.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label7: TLabel
+        StyledSettings = [Family, Size, FontColor]
+        Position.X = 32.000000000000000000
+        Position.Y = 279.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Esp'#233'cie a ser criada:'
+        TabOrder = 8
+      end
+      object DateEdit1: TDateEdit
+        Date = 45451.000000000000000000
+        Position.X = 32.000000000000000000
+        Position.Y = 366.000000000000000000
+        Size.Width = 289.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 15
+      end
+      object Label8: TLabel
+        StyledSettings = [Family, Size, FontColor]
+        Position.X = 32.000000000000000000
+        Position.Y = 338.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'Data de Cria'#231#227'o:'
+        TabOrder = 7
+      end
+      object btn_cadastrarCri: TButton
+        StyledSettings = [Family, FontColor]
+        Position.X = 110.000000000000000000
+        Position.Y = 430.000000000000000000
+        Size.Width = 131.000000000000000000
+        Size.Height = 51.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 16
+        Text = 'Cadastrar Criadouro'
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.WordWrap = True
+        OnClick = btn_cadastrarCriClick
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 69.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem3'
+      ExplicitSize.cx = 69.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Layout4: TLayout
+        Align = Top
+        Size.Width = 360.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label9: TLabel
+          StyledSettings = [Family, FontColor]
+          Position.X = 94.000000000000000000
+          Size.Width = 243.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000100000004000000}
+          Text = 'Gerenciar Criadouros'
+          TabOrder = 0
+        end
+        object SpeedButton3: TSpeedButton
+          Align = Left
+          Size.Width = 54.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowlefttoolbutton'
+        end
+      end
+      object Layout5: TLayout
+        Position.Y = 49.000000000000000000
+        Size.Width = 360.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        object edt_pesquisarCri: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 5
+          Position.X = 8.000000000000000000
+          Position.Y = 9.000000000000000000
+          Size.Width = 265.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object SpeedButton4: TSpeedButton
+          Position.X = 281.000000000000000000
+          Position.Y = 9.000000000000000000
+          Size.Width = 71.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'searcheditbutton'
+        end
       end
     end
   end
