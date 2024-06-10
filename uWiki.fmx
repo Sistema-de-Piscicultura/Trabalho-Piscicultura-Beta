@@ -15,8 +15,14 @@ object frmWiki: TfrmWiki
     Size.PlatformDefault = False
     TabIndex = 0
     TabOrder = 0
-    TabPosition = Dots
+    TabPosition = None
     Sizes = (
+      360s
+      580s
+      360s
+      580s
+      360s
+      580s
       360s
       580s
       360s
@@ -138,6 +144,7 @@ object frmWiki: TfrmWiki
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       object Layout2: TLayout
+        Align = Top
         Size.Width = 360.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
@@ -152,6 +159,49 @@ object frmWiki: TfrmWiki
           OnClick = SpeedButton1Click
         end
       end
+      object Layout3: TLayout
+        Align = Client
+        Size.Width = 360.000000000000000000
+        Size.Height = 530.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem3'
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem4'
+    end
+    object TabItem5: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem5'
     end
   end
 end

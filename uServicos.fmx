@@ -32,6 +32,7 @@ object frmServicos: TfrmServicos
     Text = 'Criadouros'
     TextSettings.Font.Size = 18.000000000000000000
     TextSettings.Font.StyleExt = {00060000000000000004000000}
+    OnClick = btn_criadourosClick
   end
   object btn_relatorio: TButton
     StyledSettings = [Family, FontColor]

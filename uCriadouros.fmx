@@ -1,4 +1,4 @@
-object Form1: TForm1
+object frmCriadouros: TfrmCriadouros
   Left = 0
   Top = 0
   Caption = 'Form1'
@@ -15,21 +15,23 @@ object Form1: TForm1
     Size.PlatformDefault = False
     TabIndex = 2
     TabOrder = 0
-    TabPosition = PlatformDefault
+    TabPosition = None
     Sizes = (
       360s
-      554s
+      580s
       360s
-      554s
+      580s
       360s
-      554s)
+      580s
+      360s
+      580s)
     object TabItem1: TTabItem
       CustomIcon = <
         item
         end>
       IsSelected = False
-      Size.Width = 69.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -64,7 +66,7 @@ object Form1: TForm1
       object Layout2: TLayout
         Align = Client
         Size.Width = 360.000000000000000000
-        Size.Height = 504.000000000000000000
+        Size.Height = 530.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         object btn_novoCriadouro: TButton
@@ -79,6 +81,7 @@ object Form1: TForm1
           TextSettings.Font.Size = 18.000000000000000000
           TextSettings.Font.StyleExt = {00060000000000000004000000}
           TextSettings.WordWrap = True
+          OnClick = btn_novoCriadouroClick
         end
         object btn_gerenciarCri: TButton
           StyledSettings = [Family, FontColor]
@@ -126,8 +129,8 @@ object Form1: TForm1
         item
         end>
       IsSelected = False
-      Size.Width = 69.000000000000000000
-      Size.Height = 26.000000000000000000
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -174,7 +177,7 @@ object Form1: TForm1
       end
       object edt_nomeCri: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 13
+        TabOrder = 11
         Position.X = 32.000000000000000000
         Position.Y = 127.000000000000000000
         Size.Width = 289.000000000000000000
@@ -187,11 +190,11 @@ object Form1: TForm1
         Position.Y = 102.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'Nome do Criadouro:'
-        TabOrder = 14
+        TabOrder = 12
       end
       object edt_idCriadouro: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 11
+        TabOrder = 9
         Position.X = 32.000000000000000000
         Position.Y = 186.000000000000000000
         Size.Width = 289.000000000000000000
@@ -204,11 +207,11 @@ object Form1: TForm1
         Position.Y = 161.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'ID do Criadouro:'
-        TabOrder = 12
+        TabOrder = 10
       end
       object edt_capacidadeCri: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 9
+        TabOrder = 7
         Position.X = 32.000000000000000000
         Position.Y = 245.000000000000000000
         Size.Width = 289.000000000000000000
@@ -221,64 +224,157 @@ object Form1: TForm1
         Position.Y = 220.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'Capacidade'
-        TabOrder = 10
+        TabOrder = 8
       end
-      object edt_especieCri: TEdit
-        Touch.InteractiveGestures = [LongTap, DoubleTap]
-        TabOrder = 6
+      object dataCriadouro: TDateEdit
+        Date = 45451.000000000000000000
         Position.X = 32.000000000000000000
         Position.Y = 304.000000000000000000
         Size.Width = 289.000000000000000000
         Size.Height = 26.000000000000000000
         Size.PlatformDefault = False
-      end
-      object Label7: TLabel
-        StyledSettings = [Family, Size, FontColor]
-        Position.X = 32.000000000000000000
-        Position.Y = 279.000000000000000000
-        TextSettings.Font.StyleExt = {00060000000000000004000000}
-        Text = 'Esp'#233'cie a ser criada:'
-        TabOrder = 8
-      end
-      object DateEdit1: TDateEdit
-        Date = 45451.000000000000000000
-        Position.X = 32.000000000000000000
-        Position.Y = 366.000000000000000000
-        Size.Width = 289.000000000000000000
-        Size.Height = 26.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 15
+        TabOrder = 13
       end
       object Label8: TLabel
         StyledSettings = [Family, Size, FontColor]
         Position.X = 32.000000000000000000
-        Position.Y = 338.000000000000000000
+        Position.Y = 279.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         Text = 'Data de Cria'#231#227'o:'
-        TabOrder = 7
+        TabOrder = 6
       end
-      object btn_cadastrarCri: TButton
+      object btn_cadastrarProx: TButton
         StyledSettings = [Family, FontColor]
         Position.X = 110.000000000000000000
-        Position.Y = 430.000000000000000000
+        Position.Y = 374.000000000000000000
         Size.Width = 131.000000000000000000
         Size.Height = 51.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 16
-        Text = 'Cadastrar Criadouro'
+        TabOrder = 14
+        Text = 'Proximo'
         TextSettings.Font.Size = 16.000000000000000000
         TextSettings.Font.StyleExt = {00060000000000000004000000}
         TextSettings.WordWrap = True
+        OnClick = btn_cadastrarProxClick
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabItem4'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Layout6: TLayout
+        Align = Top
+        Size.Width = 360.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label7: TLabel
+          StyledSettings = [Family, FontColor]
+          Position.X = 109.000000000000000000
+          Size.Width = 172.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000100000004000000}
+          Text = 'Adicionar Peixes'
+          TabOrder = 0
+        end
+        object SpeedButton5: TSpeedButton
+          Align = Left
+          Size.Width = 54.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowlefttoolbutton'
+          OnClick = SpeedButton5Click
+        end
+        object SpeedButton7: TSpeedButton
+          Align = Right
+          Position.X = 303.000000000000000000
+          Size.Width = 57.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'addtoolbutton'
+        end
+      end
+      object Layout7: TLayout
+        Align = Top
+        Position.Y = 50.000000000000000000
+        Size.Width = 360.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Edit1: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 0
+          Position.X = 24.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 257.000000000000000000
+          Size.Height = 34.000000000000000000
+          Size.PlatformDefault = False
+        end
+        object SpeedButton6: TSpeedButton
+          Align = Right
+          Position.X = 303.000000000000000000
+          Size.Width = 57.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'refreshtoolbutton'
+          OnClick = SpeedButton6Click
+        end
+      end
+      object ListBox1: TListBox
+        Position.X = 8.000000000000000000
+        Position.Y = 133.000000000000000000
+        Size.Width = 345.000000000000000000
+        Size.Height = 348.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 341.000000000000000000
+        Viewport.Height = 344.000000000000000000
+      end
+      object btn_cadastrarCri: TButton
+        Position.X = 56.000000000000000000
+        Position.Y = 504.000000000000000000
+        Size.Width = 249.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Cadastrar Tanque'
         OnClick = btn_cadastrarCriClick
+      end
+      object Label10: TLabel
+        StyledSettings = [Family, FontColor]
+        Position.X = 8.000000000000000000
+        Position.Y = 108.000000000000000000
+        Size.Width = 273.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000100000004000000}
+        Text = 'Selecione a esp'#233'cie e qtde de Peixes:'
+        TabOrder = 4
       end
     end
     object TabItem3: TTabItem
       CustomIcon = <
         item
         end>
-      IsSelected = True
-      Size.Width = 69.000000000000000000
-      Size.Height = 26.000000000000000000
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
       TabOrder = 0
@@ -335,5 +431,19 @@ object Form1: TForm1
         end
       end
     end
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\Noi\Documents\Embarcadero\Studio\Projects\Psic' +
+        'ultura\Banco\banco-piscicultura'
+      'DriverID=SQLite')
+    Left = 96
+    Top = 200
+  end
+  object FDQCriadouros: TFDQuery
+    Connection = FDConnection1
+    Left = 168
+    Top = 328
   end
 end

@@ -15,7 +15,7 @@ object frmPrincipal: TfrmPrincipal
     Size.PlatformDefault = False
     TabIndex = 0
     TabOrder = 0
-    TabPosition = Dots
+    TabPosition = None
     Sizes = (
       360s
       580s

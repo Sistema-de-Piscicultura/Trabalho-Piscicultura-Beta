@@ -17,6 +17,7 @@ type
     btn_sair: TButton;
     procedure btn_wikiClick(Sender: TObject);
     procedure btn_sairClick(Sender: TObject);
+    procedure btn_criadourosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,7 +31,12 @@ implementation
 
 {$R *.fmx}
 
-uses uWiki, uPrincipal;
+uses uWiki, uPrincipal, uCriadouros;
+
+procedure TfrmServicos.btn_criadourosClick(Sender: TObject);
+begin
+  frmCriadouros.Show;
+end;
 
 procedure TfrmServicos.btn_sairClick(Sender: TObject);
 begin
