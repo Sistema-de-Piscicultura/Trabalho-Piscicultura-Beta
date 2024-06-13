@@ -11,12 +11,13 @@ uses
   FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef,
   FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.FMXUI.Wait,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FMX.ListBox;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, FMX.ListBox, FMX.ListView.Types,
+  FMX.ListView.Appearances, FMX.ListView.Adapters.Base, FMX.ListView;
 
 type
   TCriadouro = record
-    id, capacidade, qtd_peixes : Integer;
-    nome, especie : string;
+    id, capacidade, qtd_peixes, temp : Integer;
+    nome, especie, status : string;
     dataCriacao : TDate;
   end;
 
@@ -50,7 +51,6 @@ type
     Label6: TLabel;
     dataCriadouro: TDateEdit;
     Label8: TLabel;
-    btn_cadastrarProx: TButton;
     TabItem3: TTabItem;
     Layout4: TLayout;
     Label9: TLabel;
@@ -64,13 +64,32 @@ type
     Layout6: TLayout;
     Label7: TLabel;
     SpeedButton5: TSpeedButton;
-    SpeedButton6: TSpeedButton;
+    SpeedButton7: TSpeedButton;
+    ListView1: TListView;
+    Label16: TLabel;
+    Layout8: TLayout;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    Label15: TLabel;
+    Layout9: TLayout;
+    Layout10: TLayout;
+    Label17: TLabel;
+    Label18: TLabel;
+    ListView2: TListView;
+    btn_Limpar: TButton;
+    btn_colher: TButton;
+    btn_remover: TButton;
+    TabControl2: TTabControl;
+    tbCadCri: TTabItem;
+    tbPeixesCri: TTabItem;
+    Label10: TLabel;
     Layout7: TLayout;
     Edit1: TEdit;
-    SpeedButton7: TSpeedButton;
+    SpeedButton6: TSpeedButton;
     ListBox1: TListBox;
-    btn_cadastrarCri: TButton;
-    Label10: TLabel;
+    btnCadastrarCri: TButton;
     procedure btn_cadastrarProxClick(Sender: TObject);
     procedure statusAgua(status : string);
     procedure insereCriadourosBanco(criadouro : TCriadouro);
@@ -78,11 +97,19 @@ type
     procedure btn_novoCriadouroClick(Sender: TObject);
     procedure SpeedButton5Click(Sender: TObject);
     procedure btn_cadastrarCriClick(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure btn_gerenciarCriClick(Sender: TObject);
+    procedure SpeedButton4Click(Sender: TObject);
+    procedure btnCadastrarCriClick(Sender: TObject);
 
   private
-    procedure inserirItemListBox(nome_peixe:string; qtde, cod_peixe:integer);
+    procedure inserirItemListBox(cod_peixe:integer; nome_peixe:string; qtde:integer);
     procedure atualizarListBox;
     procedure consultarPeixesBanco;
+    procedure inserirPeixesnoCriadouro(cod_peixe: integer; nome_peixe: string;
+      qtde: integer);
 
     { Private declarations }
   public
@@ -96,7 +123,12 @@ implementation
 
 {$R *.fmx}
 
-uses uPeixesFrame;
+uses uPeixesFrame, uServicos;
+
+procedure TfrmCriadouros.btnCadastrarCriClick(Sender: TObject);
+begin
+  //colocar os dados no banco
+end;
 
 procedure TfrmCriadouros.btn_cadastrarCriClick(Sender: TObject);
 var vCriadouro : TCriadouro; vPeixe : TPeixe;
@@ -107,8 +139,9 @@ begin
   vCriadouro.especie := vPeixe.nome_peixe;
   vCriadouro.dataCriacao := StrToDate(dataCriadouro.Text);
 
-  //Chamar procedimento para inserir o cliente no banco
+  //Chamar procedimento para inserir no banco
   insereCriadourosBanco(vCriadouro);
+  ShowMessage('Criadouro criado com sucesso!');
 end;
 
 procedure TfrmCriadouros.btn_cadastrarProxClick(Sender: TObject);
@@ -117,6 +150,11 @@ begin
 
   TabControl1.TabIndex := 2;
 
+end;
+
+procedure TfrmCriadouros.btn_gerenciarCriClick(Sender: TObject);
+begin
+  TabControl1.TabIndex := 3;
 end;
 
 procedure TfrmCriadouros.btn_novoCriadouroClick(Sender: TObject);
@@ -131,12 +169,13 @@ begin
   FDQCriadouros.SQL.Clear;
   FDQCriadouros.SQL.Add('INSERT INTO CRIADOUROS (ID, NOME, CAPACIDADE, ESPECIE, DATA_CRIACAO)');
   FDQCriadouros.SQL.Add(' VALUES (:ID, :NOME, :CAPACIDADE, :ESPECIE, :DATA_CRIACAO)');
-  FDQCriadouros.ParamByName('codigo').AsInteger := criadouro.id;
+  FDQCriadouros.ParamByName('id').AsInteger := criadouro.id;
   FDQCriadouros.ParamByName('nome').AsString := criadouro.nome;
   FDQCriadouros.ParamByName('capacidade').AsInteger := criadouro.capacidade;
   FDQCriadouros.ParamByName('especie').AsString := criadouro.especie;
   FDQCriadouros.ParamByName('data_criacao').AsDate := criadouro.dataCriacao;
 
+  FDQCriadouros.ExecSQL;
 
 end;
 
@@ -148,13 +187,13 @@ begin
     status := 'Ruim';
 end;
 
-procedure TfrmCriadouros.inserirItemListBox(nome_peixe:string; qtde, cod_peixe:integer);
+procedure TfrmCriadouros.inserirItemListBox(cod_peixe:integer; nome_peixe:string; qtde:integer);
 var item : TListBoxItem;
     form : TFrmListaPeixes;
 begin
 
   item := TListBoxItem.Create(ListBox1);
-  item.Height := 41;
+  item.Height := 52;
   item.Tag := cod_peixe;
 
   form := TFrmListaPeixes.Create(item);
@@ -168,6 +207,28 @@ begin
 
 end;
 
+procedure TfrmCriadouros.SpeedButton1Click(Sender: TObject);
+begin
+  frmServicos.Show;
+
+end;
+
+procedure TfrmCriadouros.SpeedButton2Click(Sender: TObject);
+begin
+  TabControl1.TabIndex := 0;
+end;
+
+procedure TfrmCriadouros.SpeedButton3Click(Sender: TObject);
+begin
+  TabControl1.TabIndex := 0;
+end;
+
+procedure TfrmCriadouros.SpeedButton4Click(Sender: TObject);
+begin
+  //mostrar criadouros no listview1
+
+end;
+
 procedure TfrmCriadouros.SpeedButton5Click(Sender: TObject);
 begin
   TabControl1.TabIndex := 1;
@@ -175,7 +236,9 @@ end;
 
 procedure TfrmCriadouros.SpeedButton6Click(Sender: TObject);
 begin
+  ListBox1.Items.Clear;
   atualizarListBox();
+
 end;
 
 procedure TfrmCriadouros.consultarPeixesBanco();
@@ -196,16 +259,22 @@ begin
 
   while not FDQCriadouros.Eof do
   begin
-    inserirItemListBox( FDQCriadouros.FieldByName('nome_peixe').AsString,
-                        FDQCriadouros.FieldByName('cod_peixe').AsInteger,
+    inserirItemListBox( FDQCriadouros.FieldByName('cod_peixe').AsInteger,
+                        FDQCriadouros.FieldByName('nome_peixe').AsString,
                         FDQCriadouros.FieldByName('qtde').AsInteger);
 
 
     FDQCriadouros.Next;
+
   end;
 
+end;
 
+procedure TfrmCriadouros.inserirPeixesnoCriadouro(cod_peixe : integer; nome_peixe : string; qtde : integer);
+begin
 
 end;
+
+
 
 end.

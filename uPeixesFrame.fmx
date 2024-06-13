@@ -1,70 +1,69 @@
 object FrmListaPeixes: TFrmListaPeixes
   Size.Width = 344.000000000000000000
-  Size.Height = 96.000000000000000000
+  Size.Height = 52.000000000000000000
   Size.PlatformDefault = False
-  object edt_qtde: TEdit
-    Touch.InteractiveGestures = [LongTap, DoubleTap]
-    TabOrder = 0
-    Text = '0'
-    TextSettings.HorzAlign = Center
-    Position.X = 144.000000000000000000
-    Position.Y = 56.000000000000000000
-    Size.Width = 57.000000000000000000
-    Size.Height = 20.000000000000000000
-    Size.PlatformDefault = False
-  end
-  object SpeedButton1: TSpeedButton
-    Position.X = 64.000000000000000000
-    Position.Y = 56.000000000000000000
-    Size.Width = 57.000000000000000000
-    Size.Height = 20.000000000000000000
-    Size.PlatformDefault = False
-    StyleLookup = 'deleteitembutton'
-    OnClick = SpeedButton1Click
-  end
-  object SpeedButton2: TSpeedButton
-    Position.X = 220.000000000000000000
-    Position.Y = 56.000000000000000000
-    Size.Width = 53.000000000000000000
-    Size.Height = 20.000000000000000000
-    Size.PlatformDefault = False
-    StyleLookup = 'addtoolbutton'
-    OnClick = SpeedButton2Click
-  end
-  object lbl_codigo: TLabel
-    StyledSettings = [Family, FontColor]
-    Position.X = 81.000000000000000000
-    Position.Y = 21.000000000000000000
-    Size.Width = 41.000000000000000000
-    Size.Height = 17.000000000000000000
-    Size.PlatformDefault = False
-    TextSettings.Font.Size = 14.000000000000000000
-    TextSettings.Font.StyleExt = {00060000000000000004000000}
-    Text = '01'
-    TabOrder = 5
-  end
-  object lbl_nome: TLabel
-    StyledSettings = [Family, FontColor]
-    Position.X = 144.000000000000000000
-    Position.Y = 21.000000000000000000
-    Size.Width = 88.000000000000000000
-    Size.Height = 17.000000000000000000
-    Size.PlatformDefault = False
-    TextSettings.Font.Size = 14.000000000000000000
-    TextSettings.Font.StyleExt = {00060000000000000004000000}
-    Text = 'Til'#225'pia'
-    TabOrder = 4
-  end
   object Label1: TLabel
     StyledSettings = [Family, FontColor]
-    Position.X = 40.000000000000000000
-    Position.Y = 21.000000000000000000
+    Position.Y = 8.000000000000000000
     Size.Width = 33.000000000000000000
     Size.Height = 17.000000000000000000
     Size.PlatformDefault = False
     TextSettings.Font.Size = 14.000000000000000000
     TextSettings.Font.StyleExt = {00060000000000000004000000}
     Text = 'C'#243'd.:'
+    TabOrder = 2
+  end
+  object lbl_codigo: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 41.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 25.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    Text = '01'
+    TabOrder = 4
+  end
+  object lbl_nome: TLabel
+    StyledSettings = [Family, FontColor]
+    Position.X = 74.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 71.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 14.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    Text = 'Til'#225'pia'
     TabOrder = 3
+  end
+  object SpeedButton1: TSpeedButton
+    Position.X = 153.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 55.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'deleteitembutton'
+    OnClick = SpeedButton1Click
+  end
+  object SpeedButton2: TSpeedButton
+    Position.X = 281.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 55.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'addtoolbutton'
+    OnClick = SpeedButton2Click
+  end
+  object edt_qtde: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Text = '0'
+    TextSettings.HorzAlign = Center
+    Position.X = 216.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 20.000000000000000000
+    Size.PlatformDefault = False
   end
 end
